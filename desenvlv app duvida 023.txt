@@ -1,0 +1,80 @@
+Duvidas sobre o layout.
+
+Como eu mudo a cor de um botão?
+Com eu faço um botão ficar la embaixo no layout?
+
+O que e uma activity?
+
+É uma coisa que representa a interface do aplicativo, por isso uma activity esta sempre conectada com um arquivo xml
+
+
+
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+
+    super.onCreate(savedInstanceState);
+
+    setContentView(R.layout.layout);
+
+
+Ainda nao entendi o que este código acima faz?  Ele conecta quando uma activity é iniciada, qual sera o layout que ele vai inflar na tela.
+
+Para abrir uma acitivty dentro de outra eu uso o comando
+Intent intent = new Intent(this, SegundaTela.class);
+ startActivity(intent);
+
+por este exemplo se nota que a activity segunda tela sera chamada, e o layout conectado a esta segunda tela (pelo comando setContentView(R.layoutu.nome_do_layout) sera inflado, populated 
+Logo para cada layout criada corresponde uma activity funcional para ele.
+
+O que eu sei. Eu para criar um app, preciso criar ele em uma activity e em um layout, o layout pega os dados, e então de pois eu preciso levar esses dados para a activity. Para inflar a tela do celular com o conteúdo da activity, eu preciso chamar a linha
+	setContentView(R.layout.nomedolayout) ja no inicio da activity, ele vai linkar a activity ao layout correspondente.
+
+Na activity, vc vai preencher com as variáveis que vc nomeou la no layout
+<EditText
+    android:id="@+id/valB"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:ems="10"
+    android:hint="digite a marca"
+    android:inputType="text"
+    android:minHeight="48dp" />
+
+Botar o tipo de variável
+EditText valA
+E dentro do metodo  colocar
+valA = findViewById(R.id.valA);
+
+Agora porque? Usar esse código findViewByid
+Para que o arquivo va procurar as informações no layout no ponto certo
+
+Bom activity é uma classe java, para iniciar entendemos a classe appcompatAcctivity. E iniciamos sobrescrevendo o metodo onCreate
+
+@override
+Protected void onCreated(Bundle saveIntanceState){
+	super.onCreate(savedInstanceState);
+	setContentView(R.layout.activitymain); com este comando conectamos a activy ao arquivo xml correspondente dele
+
+}
+AGORA PARA CHAMAR uma outra activity dentro de outra;
+
+Intent intent = new Intent(this,SegundaActivity.class);
+
+startActivity(intent);
+
+Passa uma intecao e o nome da awtiviy q se dessa abrir
+
+A Activity é configurada no momento que é criada, após isso, ela é iniciada, e fica visível para o usuário, assim como quando é reiniciada após ser pausada. Uma Activity pausada pode ser parcialmente visível, por exemplo, quando é vista atrás de uma janela de diálogo. Quando é interrompida, não fica visível para o usuário. Por último, ela será destruída.
+
+Como que ao clicar em um botão eu levo ate outra activity
+
+btnCadastrar.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        Intent intent = new Intent(getApplicationContext(), CarroCadastro.class);
+        startActivity(intent);
+    }
+});
+
+Neste caso ao clicar no botão ele leva ate a activity carro cadastro. E la no carro cadastro vamos criar uma forma de pegar os dados digitados e criar um objeto carro e salvar dentro de uma arraylist
+
+
