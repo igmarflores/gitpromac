@@ -75,5 +75,6 @@ btnCadastrar.setOnClickListener(new View.OnClickListener() {
 });
 
 Neste caso ao clicar no botão ele leva ate a activity carro cadastro. E la no carro cadastro vamos criar uma forma de pegar os dados digitados e criar um objeto carro e salvar dentro de uma arraylist
+Hj eu vi o fdp do Jason, ele não gosta de mim, so sexo mesmo
 
 
